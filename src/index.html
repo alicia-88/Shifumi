@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap w/ Parcel</title>
+  <link rel="stylesheet" href="scss/styles.scss">
+  <script type="module" src="js/main.js"></script>
+</head>
+
+<body id="container" class="container-fluid">
+  <div class="row">
+    <header class="text-center d-flex justify-content-between my-2">
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Règle de jeu
+      </button>
+      <button type="button" class="btn btn-success" id="btn-history">Historique</button>
+      <h1 class="mx-auto"> ShiFuMi </h1>
+      <button type="button" class="btn btn-danger" id="btn-reset">Reset</button>
+    </header>
+    <div id="game">
+      <div class="card mb-5 text-center">
+        <h2 class="card-header">
+          <span class="badge rounded-pill bg-danger">&nbsp;<i id="player-defeat" class="counter">99</i>&nbsp;
+            <i class="fa-regular fa-thumbs-down"></i>
+          </span> Joueur <span class="badge rounded-pill bg-success">&nbsp;<i id="player-victoire"
+              class="counter">99</i>&nbsp;<i class="fa-regular fa-thumbs-up"></i></span>
+        </h2>
+        <div class="card-body">
+          <h3 class="card-title my-5" id="player-choice">. . .</h3>
+          <p class="card-text d-flex justify-content-evenly">
+            <i class="fa-regular fa-hand-back-fist player-icon select" id="rock"></i>
+            <i class="fa-regular fa-hand player-icon" id="paper"></i>
+            <i class="fa-regular fa-hand-scissors player-icon" id="scissors"></i>
+            <i class="fa-regular fa-hand-lizard player-icon" id="lizard"></i>
+            <i class="fa-regular fa-hand-spock player-icon" id="spock"></i>
+          </p>
+        </div>
+      </div>
+      <div class="row mb-5 text-center justify-content-center">
+        <div class="col-4">
+          <p>Player : </p>
+          <p id="percentageUser"></p>
+        </div>
+        <div class="col-3">
+          <button type="button" class="btn btn-primary" id="btn-shifumi">Shi Fu Mi</button>
+          <p class="result" id="result-right"></p>
+        </div>
+        <div class="col-4" ">
+          <p>Computer : </p>
+          <p id="percentageComputer"></p>
+        </div>
+      </div>
+      <div class="card mb-5 text-center">
+        <h2 class="card-header">
+          <span class="badge rounded-pill bg-danger">&nbsp;<i id="computer-defeat" class="counter">99</i>&nbsp;
+            <i class="fa-regular fa-thumbs-down"></i>
+          </span> Ordinateur <span class="badge rounded-pill bg-success">&nbsp;<i id="computer-victoire"
+              class="counter">99</i>&nbsp;
+            <i class="fa-regular fa-thumbs-up"></i></span>
+        </h2>
+        <div class="card-body">
+          <h3 class="card-title my-5" id="computer-choice">. . .</h3>
+          <p class="card-text d-flex justify-content-evenly">
+            <i class="fa-regular fa-hand-back-fist"></i>
+            <i class="fa-regular fa-hand"></i>
+            <i class="fa-regular fa-hand-scissors"></i>
+            <i class="fa-regular fa-hand-lizard"></i>
+            <i class="fa-regular fa-hand-spock"></i>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <img class="img-animate d-none" src="./img/rock.png" alt="" id="img-animate">
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Règle de jeu ShiFuMi</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>Les ciseaux coupent le papier</li>
+            <li>Le papier bat la pierre</li>
+            <li>La pierre écrase le lézard</li>
+            <li>Le lézard empoisonne Spock</li>
+            <li>Spock écrabouille les ciseaux</li>
+            <li>Les ciseaux décapitent le lézard</li>
+            <li>Le lézard mange le papier</li>
+            <li>Le papier repousse Spock</li>
+            <li>Spock détruit la pierre</li>
+            <li>La pierre bat les ciseaux</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
